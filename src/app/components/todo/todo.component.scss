@@ -1,0 +1,39 @@
+#wrapper {
+  background: #efefef;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  #container {
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    #section-1 {
+      min-height: 40%;
+      position: relative;
+    }
+    #section-2 {
+      height: 60%;
+      background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+      position: relative;
+    }
+  }
+
+  
+  #todo-container {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 12%;
+    top: 100px;
+    z-index: 2;
+    border: 3px solid gray;
+    background: whitesmoke;
+    padding: 10px
+  }
+  #nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
