@@ -9,13 +9,21 @@
       <span>My Application</span>
     </mat-toolbar>
     <mat-card>
-      <form action="">
+      <form #newTodo="ngForm" (ngSubmit)="addTodo(newTodo.value)" autocomplete="off">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Add todo here..." >
+          <input matInput placeholder="Add todo here..." 
+          (ngModel)="description" name="description">
         </mat-form-field> <br>
-        <button mat-raised-button type="submit" color="accent" >Submit</button>
+        <button mat-raised-button type="submit" color="accent">Submit</button>
       </form>
+      <mat-card-content *ngFor="let item of todoItems" 
+        style="border: 2px solid purple; padding: 4px; margin: 5px">
+        {{item.createdOn}} : {{item.description}} 
+        <br>
+        <mat-checkbox>{{item.completed}}</mat-checkbox>
+      </mat-card-content>
     </mat-card>
+    
 
   
   
